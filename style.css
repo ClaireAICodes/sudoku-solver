@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+h1 {
+    color: #1a73e8;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    color: #5f6368;
+    margin-bottom: 2rem;
+}
+
+.sudoku-grid {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 1px;
+    background-color: #3c4043;
+    border: 3px solid #3c4043;
+    margin: 0 auto 2rem;
+    width: 100%;
+    aspect-ratio: 1/1;
+    max-width: 450px;
+}
+
+.sudoku-grid input {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: 1px solid #ccc;
+    outline: none;
+    background: white;
+    padding: 0;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+
+.sudoku-grid input:focus {
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+}
+
+.sudoku-grid input:nth-child(3n) {
+    border-right: 2px solid #3c4043;
+}
+
+.sudoku-grid input:nth-child(9n) {
+    border-right: 3px solid #3c4043;
+}
+
+.sudoku-grid input:nth-child(n+10):nth-child(-n+27),
+.sudoku-grid input:nth-child(n+46):nth-child(-n+73) {
+    border-bottom: 2px solid #3c4043;
+}
+
+.sudoku-grid input.solved {
+    color: #1a73e8;
+    background-color: #e8f0fe;
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.9rem;
+}
+
+.primary {
+    background-color: #1a73e8;
+    color: white;
+}
+
+.primary:hover {
+    background-color: #1557b0;
+}
+
+.secondary {
+    background-color: #dadce0;
+    color: #202124;
+}
+
+.secondary:hover {
+    background-color: #bdc1c6;
+}
+
+.message {
+    margin-top: 1rem;
+    font-weight: bold;
+    min-height: 1.5rem;
+}
+
+.success {
+    color: #137333;
+}
+
+.error {
+    color: #d93025;
+}
